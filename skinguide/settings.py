@@ -83,6 +83,9 @@ DATABASES = {
         'PASSWORD': config('DJANGO_DB_PASSWORD'),
         'HOST': config('DJANGO_DB_HOST'),
         'PORT': config('DJANGO_DB_PORT'),
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
     }
 }
 
