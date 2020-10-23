@@ -120,11 +120,7 @@ select page
 
 
         {% for image in images.all %}
-
-            <p>{{image.created_at}}</p>
-            <p>{{image.product}}</p>
-            <p>{{image.image}}</p>
-    
+            <p>{{image.title}}</p>
         {% endfor %}
     
     </section>

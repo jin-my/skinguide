@@ -1,0 +1,9 @@
+<h1>
+    skin test
+</h1>
+{% if user.is_authenticated %}
+    {{user.username}}님 환영합니다.
+    <a href="{% url 'user:logout' %}">로그아웃</a>
+{% else %}
+    
+{% endif %}
