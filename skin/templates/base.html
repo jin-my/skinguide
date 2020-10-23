@@ -3,23 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>base page</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="base.css">
-    <style type="text/css">
+    <style>
         a {text-decoration:none }
+
+
+        /* base.css */
+
+        header {
+            margin: 0vh;
+            padding: 0vh;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+
+
+        /* 검색창 */
+        div {
+            height: 40px;
+            width: 400px;
+            border: 1px solid orangered;
+            background: white;
+            margin-left: 10px;
+            margin-top: 7vh;
+            float: left;
+        }
+
+        input {
+            font-size: 25px;
+            width: 325px;
+            border: 0px;
+            outline: none;
+            margin: 0px;
+        }
+
+        button {
+            width: 50px;
+            height: 100%;
+            border: 0px;
+            background: orangered;
+            outline: none;
+            float: right;
+            color: white;
+        }
+
+        /*로그인, 회원가입*/
+        p {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        /*로고*/
+
+        img {
+            margin-bottom: 3vh;
+            margin-top: 5vh;
+            margin-left: 5vh;
+            height: 60px;
+            width: 230px;
+            float: left;
+
+        }
+        
+
+        /*네브바*/
+
+        body {
+            margin: 0;
+        }
+
+        .nav-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+            list-style-type: none;
+        }
+
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-item:nth-child(1) {
+            background-color: orangered;
+        }
+
+        .nav-item:hover {
+            background-color: orangered;
+        }
+
+        /*select box*/
+
+
+
     </style>   
 </head>
 <body>
 
 
     <header>
-        <a href=""><img src="../images/LOGO.png" alt="LOGO"></a>
+        <a href=""><img src="https://static.lotteon.com/p/common/foCommon/assets/img/logo_lohbs@2x.png" alt="LOGOFILE"></a>
         <div>
             <input type="text" placeholder="LOHBs만의 맞춤서비스">
             <button>Go</button>
         </div>
         <a href=""><p><b>로그인</b></p></a>  <a href=""><p><b>회원가입</b></p></a>
     </header>
+
     <nav>
         <ul class="nav-container">
             <li class="nav-item"><a href=""><b>홈</b></a></li>
@@ -32,5 +136,6 @@
         </ul>
     </nav>
 
+    {% block content %}{% endblock %}
 </body>
 </html>
