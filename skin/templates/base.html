@@ -4,110 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="./base.css">
+
     <style>
         a {text-decoration:none }
 
 
-        /* base.css */
-
         header {
-            margin: 0vh;
-            padding: 0vh;
-        }
+    margin: 0vh;
+    padding: 0vh;
+}
 
-        a {
-            text-decoration: none
-        }
+a {
+    text-decoration: none
+}
 
 
 
-        /* 검색창 */
-        div {
-            height: 40px;
-            width: 400px;
-            border: 1px solid orangered;
-            background: white;
-            margin-left: 10px;
-            margin-top: 7vh;
-            float: left;
-        }
+/* 검색창 */
+div {
+    height: 40px;
+    width: 400px;
+    border: 1px solid orangered;
+    background: white;
+    margin-left: 10px;
+    margin-top: 9vh;
+    float: left;
+}
 
-        input {
-            font-size: 25px;
-            width: 325px;
-            border: 0px;
-            outline: none;
-            margin: 0px;
-        }
+input {
+    font-size: 25px;
+    width: 325px;
+    border: 0px;
+    outline: none;
+    margin: 0px;
+}
 
-        button {
-            width: 50px;
-            height: 100%;
-            border: 0px;
-            background: orangered;
-            outline: none;
-            float: right;
-            color: white;
-        }
+button {
+    width: 50px;
+    height: 100%;
+    border: 0px;
+    background: orangered;
+    outline: none;
+    float: right;
+    color: white;
+}
 
-        /*로그인, 회원가입*/
-        p {
-            float: right;
-            margin-top: 10px;
-            margin-right: 10px;
-        }
+/*로그인, 회원가입*/
+p {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
 
-        /*로고*/
+/*로고*/
 
-        img {
-            margin-bottom: 3vh;
-            margin-top: 5vh;
-            margin-left: 5vh;
-            height: 60px;
-            width: 230px;
-            float: left;
+img {
+    margin-bottom: 3vh;
+    margin-top: 5vh;
+    margin-left: 5vh;
+    height: 60px;
+    width: 230px;
+    float: left;
+}
 
-        }
-        
+/*네브바*/
 
-        /*네브바*/
+body {
+    margin: 0;
+}
 
-        body {
-            margin: 0;
-        }
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    list-style-type: none;
+}
 
-        .nav-container {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: whitesmoke;
-            list-style-type: none;
-        }
+.nav-item {
+    padding: 15px;
+    cursor: pointer;
+}
 
-        .nav-item {
-            padding: 15px;
-            cursor: pointer;
-        }
+.nav-item a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
 
-        .nav-item a {
-            text-align: center;
-            text-decoration: none;
-            color: black;
-        }
+.nav-item:nth-child(1) {
+    background-color: orangered;
+}
 
-        .nav-item:nth-child(1) {
-            background-color: orangered;
-        }
+.nav-item:hover {
+    background-color: orangered;
+}
 
-        .nav-item:hover {
-            background-color: orangered;
-        }
-
-        /*select box*/
-
+/*select box*/
 
 
     </style>   
@@ -126,13 +122,13 @@
 
     <nav>
         <ul class="nav-container">
-            <li class="nav-item"><a href=""><b>홈</b></a></li>
+            <li class="nav-item"><a href="base.html"><b>홈</b></a></li>
             <li class="nav-item"><a href=""><b>랭킹</b></a></li>
             <li class="nav-item"><a href=""><b>MD추천</b></a></li>
             <li class="nav-item"><a href=""><b>롭스딜</b></a></li>
             <li class="nav-item"><a href=""><b>이벤트</b></a></li>
             <li class="nav-item"><a href=""><b>기획전</b></a></li>
-            <li class="nav-item"><a href=""><b>SKIN GUIDE</b></a></li>
+            <li class="nav-item"><a href="skincheck.html"><b>SKIN GUIDE</b></a></li>
         </ul>
     </nav>
 
