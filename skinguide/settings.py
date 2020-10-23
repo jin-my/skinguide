@@ -176,6 +176,8 @@ MEDIA_URL = config('MEDIA_URL')
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'path/to/store/my/files/')
 
+AUTH_USER_MODEL = "user.User"
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
