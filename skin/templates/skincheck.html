@@ -15,49 +15,89 @@
     <title>Document</title>
 </head>
 <body>
-    
+        
     <!-- 피부 타입 기입한 (4가지 지표에 체크) -->
 
     <!-- 피부 타임 : 건성(D)지성(O) // 민감성(S)저항성(R) // 색소성(P)비색소성(N) // 주름성(W)탄력성(T) -->
 
-    <h2>피부 타입</h2>
-    <h4>201021 push test</h4>
+    <link rel="stylesheet" href="../styles/skincheckbox.css">
+        
+    <section>
+        
+        <h2>당신의 피부 타입은?</h2>
+        <h4>[Baumann Skin Types]</h4>
 
-    <form>
-        1. 건성 vs 지성 [D/O]
-        <br>
-        <input type="radio" name = "check_skin_type" value = "Dry">건성
-        <input type="radio" name = "check_skin_type" value = "Oily">지성
-        <input type="radio" name = "check_skin_type" value = "Null">모르겠음
-    </form>
+        <script>
+            // checkbox 선택한 value값 가져오는 script
+            function value_check() 
+            {
+                var check_count = document.getElementsByName("chk").length;
+ 
+                for (var i=0; i<check_count; i++) 
+                {
+                   if(document.getElementsByName("chk")[i].checked == true) 
+                    {
+                    alert(document.getElementsByName("chk")[i].value);
+                    }
+                }
+            }
+        </script>
 
-    <form>
-        2. 민감성 vs 저항성 [S/R]
-        <br>
-        <input type="radio" name = "check_skin_type" value = "Sensitive">민감성
-        <input type="radio" name = "check_skin_type" value = "Resistant">저항성
-        <input type="radio" name = "check_skin_type" value = "Null">모르겠음
-    </form>
+        <form name = "form_do">
+            1. 건성 vs 지성 [D/O]
+            <br>
+            <input type = "checkbox" class = "chk" id = "chk" name = "chk"><label class = "DO" for="chk"></label>
+            <br>
+            <input type="radio" name = "check_skin_type" value = "Dry">건성
+            <input type="radio" name = "check_skin_type" value = "Oily">지성
+            <!-- <input type="radio" name = "check_skin_type" value = "Null">모르겠음 -->
 
-    <form>
-        3. 색소성 vs 비색소성 [P/N]
-        <br>
-        <input type="radio" name = "check_skin_type" value = "Pigmented">색소성
-        <input type="radio" name = "check_skin_type" value = "NonPigmented">비색소성
-        <input type="radio" name = "check_skin_type" value = "Null">모르겠음
-    </form>
+            <button onclick = "value_check()">체크된 객체 value 가져오기</button>
+        </form>
 
-    <form>
-        4. 주름성 vs 탄력성 [W/T]
-        <br>
-        <input type="radio" name = "check_skin_type" value = "Wrinkled">주름성
-        <input type="radio" name = "check_skin_type" value = "Tight">탄력성
-        <input type="radio" name = "check_skin_type" value = "Null">모르겠음
-    </form>
+        <form name = "form_sr">
+            2. 민감성 vs 저항성 [S/R]
+            <br>
+            <input type = "checkbox" class = "chk" id = "chk"><label class = "SR" for="chk"></label>
+            <br>
+            <input type="radio" name = "check_skin_type" value = "Sensitive">민감성
+            <input type="radio" name = "check_skin_type" value = "Resistant">저항성
+
+            <button onclick = "value_check()">체크된 객체 value 가져오기</button>            
+        </form>
+
+        <form name = "form_pn">
+            3. 색소성 vs 비색소성 [P/N]
+            <br>
+            <input type = "checkbox" class = "chk" id = "chk"><label class = "PN" for="chk"></label>
+            <br>
+            <input type="radio" name = "check_skin_type" value = "Pigmented">색소성
+            <input type="radio" name = "check_skin_type" value = "NonPigmented">비색소성
+
+            <button onclick = "value_check()">체크된 객체 value 가져오기</button>            
+        </form>
+
+        <form name = "form_wt">
+            4. 주름성 vs 탄력성 [W/T]
+            <br>
+            <input type = "checkbox" class = "chk" id = "chk"><label class = "WT" for="chk"></label>
+            <br>
+            <input type="radio" name = "check_skin_type" value = "Wrinkled">주름성
+            <input type="radio" name = "check_skin_type" value = "Tight">탄력성
+            
+            <button onclick = "value_check()">체크된 객체 value 가져오기</button>
+        </form>
+        
+        <input type="button" value = "입력완료">
+        <input type="button" value = "모르겠다"> <!-- 다음에는 test page -->
+
+        <!-- 완료 버튼 누르면 피부 타입에 대한 데이터 값이 개인정보로 넘어가도록 -->
+
+
+
+    </section>
+
     
-    <button>입력완료</button>
-
-    <!-- 버튼 누르면 피부 타입에 대한 데이터 값이 개인정보로 넘어가도록 -->
 
 
     <!-- 기존 사용하는 제품 입력 (가격도 입력 + 추후에 상품 추천시 참고 사항으로)  -->
@@ -65,6 +105,25 @@
 
     <!-- 쇼핑몰에 있는 제품 정보를 불러옴 (아니면 이미지 저장하거나 롭스 크롤링 가능? -> 카테고리는 3개 (base)만 지정한다 -->
 
+    <section>
+        
+        <h2>당신이 사용한 LOHBs 제품은?</h2>
+        <h4>Your PICK</h4>
+
+
+        
+    
+    
+    
+    </section>
+
+
+
+
+
+
+
+    <!--
 
     <style madia = "screen">
         
@@ -140,6 +199,11 @@
             }); 
         });
     </script>
+
+-->
+
+
+
 
 
 </body>
