@@ -15,4 +15,5 @@ def image(request):
     images = Product.objects.order_by('-created_at') #images 라는 객체는 저장하고, {}를 html에 넘겨준다
     # images = Product.title
     # boards = Board.objects.order_by('-created_at')
+    
     return render(request, 'skincheck.html', {'images':images}) # key 값을 들여움
