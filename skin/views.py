@@ -9,6 +9,12 @@ def skin(request):
 def skincheck(request):
     return render(request, 'skincheck.html')
 
+def base(request):
+    return render(request, 'base.html')
+
+def select(request):
+    return render(request, 'select.html')
+
 # 사진 불러와서 출력하는 용도 객체 만들기
 
 def image(request):
