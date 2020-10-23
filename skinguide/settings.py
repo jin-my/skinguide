@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user.apps.UserConfig',
     'skin.apps.SkinConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +131,50 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = "user.User"
+
+
+
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_REGION = config('AWS_REGION')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_ENDPOINT_URL = config('AWS_S3_ENDPOINT_URL')
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_ADDRESSING_STYLE = 'virtual'
+
+
+# AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+# AWS_REGION = config('AWS_REGION')
+# # AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+# AWS_S3_ENDPOINT_URL = config('AWS_S3_ENDPOINT_URL')
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_S3_ADDRESSING_STYLE = 'virtual'
+# # AWS_QUERYSTRING_AUTH = False
+
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
+
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1024000000
+FILE_UPLOAD_MAX_MEMORY_SIZE = 1024000000
+
+MEDIA_URL = config('MEDIA_URL')
+###########################AWS
+# AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID') # .csv 파일에 있는 내용을 입력 Access key ID
+# AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY') # .csv 파일에 있는 내용을 입력 Secret access key
+# AWS_REGION = config('AWS_REGION')
+# AWS_S3_ENDPOINT_URL=config('AWS_S3_ENDPOINT_URL')
+# ###S3 Storages
+# # AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME') # 설정한 버킷 이름
+# # AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
+# # AWS_S3_OBJECT_PARAMETERS = {
+# #     'CacheControl': 'max-age=86400',
+# # }
+
+
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'path/to/store/my/files/')
 
 AUTH_USER_MODEL = "user.User"
 
