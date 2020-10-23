@@ -110,10 +110,19 @@
         <h2>당신이 사용한 LOHBs 제품은?</h2>
         <h4>Your PICK</h4>
 
-
         
+<!-- 객체 정하기 -->
+<!-- main 페이지에서 admin에 저장한 data (사진)를 가져오자 -->
+<!-- model에 만든 class를 views에서 class의 객체를 가져오면 data를 다룰 수 있다 -->
+
+
+        {% for image in images.all %}
+
+            <p>{{image.created_at}}</p>
+            <p>{{image.product}}</p>
+            <p>{{image.image}}</p>
     
-    
+        {% endfor %}
     
     </section>
 
