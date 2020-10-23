@@ -7,8 +7,4 @@ class User(AbstractUser):
     # id password last_login is_superuser username first_name last_name email is_staff is_activate date_joined
     skintype=models.CharField(max_length=5, null = True)
     gender=models.CharField(max_length=2, null = True)
-<<<<<<< HEAD
-    product = models.ForeignKey(skin_models.Product, on_delete=models.CASCADE, null=True)
-=======
     product=models.ForeignKey(skin_models.Product, on_delete=models.CASCADE, null=True)
->>>>>>> d6db616b558060b52154a2347acf3a97ccb0af1a
