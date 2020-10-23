@@ -1,0 +1,219 @@
+<h1>
+    skin test
+</h1>
+
+<h1>test</h1>
+
+<!-- 사용자의 피부 타입이랑 기존 제품 후기? 같은 거 조사해서 정보를 추가하고 넘겨주는 페이지 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+    <!-- 피부 타입 기입한 (4가지 지표에 체크) -->
+
+    <!-- 피부 타임 : 건성(D)지성(O) // 민감성(S)저항성(R) // 색소성(P)비색소성(N) // 주름성(W)탄력성(T) -->
+
+    <link rel="stylesheet" href="../styles/skincheckbox.css">
+        
+    <section>
+        
+        <h2>당신의 피부 타입은?</h2>
+        <h4>[Baumann Skin Types]</h4>
+
+        <script>
+            // checkbox 선택한 value값 가져오는 script
+            function value_check() 
+            {
+                var check_count = document.getElementsByName("chk").length;
+ 
+                for (var i=0; i<check_count; i++) 
+                {
+                   if(document.getElementsByName("chk")[i].checked == true) 
+                    {
+                    alert(document.getElementsByName("chk")[i].value);
+                    }
+                }
+            }
+        </script>
+
+        <form name = "form_do">
+            1. 건성 vs 지성 [D/O]
+            <br>
+            <input type = "checkbox" class = "chk" id = "chk" name = "chk"><label class = "DO" for="chk"></label>
+            <br>
+            <input type="radio" name = "check_skin_type" value = "Dry">건성
+            <input type="radio" name = "check_skin_type" value = "Oily">지성
+            <!-- <input type="radio" name = "check_skin_type" value = "Null">모르겠음 -->
+
+            <button onclick = "value_check()">체크된 객체 value 가져오기</button>
+        </form>
+
+        <form name = "form_sr">
+            2. 민감성 vs 저항성 [S/R]
+            <br>
+            <input type = "checkbox" class = "chk" id = "chk"><label class = "SR" for="chk"></label>
+            <br>
+            <input type="radio" name = "check_skin_type" value = "Sensitive">민감성
+            <input type="radio" name = "check_skin_type" value = "Resistant">저항성
+
+            <button onclick = "value_check()">체크된 객체 value 가져오기</button>            
+        </form>
+
+        <form name = "form_pn">
+            3. 색소성 vs 비색소성 [P/N]
+            <br>
+            <input type = "checkbox" class = "chk" id = "chk"><label class = "PN" for="chk"></label>
+            <br>
+            <input type="radio" name = "check_skin_type" value = "Pigmented">색소성
+            <input type="radio" name = "check_skin_type" value = "NonPigmented">비색소성
+
+            <button onclick = "value_check()">체크된 객체 value 가져오기</button>            
+        </form>
+
+        <form name = "form_wt">
+            4. 주름성 vs 탄력성 [W/T]
+            <br>
+            <input type = "checkbox" class = "chk" id = "chk"><label class = "WT" for="chk"></label>
+            <br>
+            <input type="radio" name = "check_skin_type" value = "Wrinkled">주름성
+            <input type="radio" name = "check_skin_type" value = "Tight">탄력성
+            
+            <button onclick = "value_check()">체크된 객체 value 가져오기</button>
+        </form>
+        
+        <input type="button" value = "입력완료">
+        <input type="button" value = "모르겠다"> <!-- 다음에는 test page -->
+
+        <!-- 완료 버튼 누르면 피부 타입에 대한 데이터 값이 개인정보로 넘어가도록 -->
+
+
+
+    </section>
+
+    
+
+
+    <!-- 기존 사용하는 제품 입력 (가격도 입력 + 추후에 상품 추천시 참고 사항으로)  -->
+
+
+    <!-- 쇼핑몰에 있는 제품 정보를 불러옴 (아니면 이미지 저장하거나 롭스 크롤링 가능? -> 카테고리는 3개 (base)만 지정한다 -->
+
+    <section>
+        
+        <h2>당신이 사용한 LOHBs 제품은?</h2>
+        <h4>Your PICK</h4>
+
+        
+<!-- 객체 정하기 -->
+<!-- main 페이지에서 admin에 저장한 data (사진)를 가져오자 -->
+<!-- model에 만든 class를 views에서 class의 객체를 가져오면 data를 다룰 수 있다 -->
+
+
+        {% for image in images.all %}
+
+            <p>{{image.created_at}}</p>
+            <p>{{image.product}}</p>
+            <p>{{image.image}}</p>
+    
+        {% endfor %}
+    
+    </section>
+
+
+
+
+
+
+
+    <!--
+
+    <style madia = "screen">
+        
+        .container{
+            height : 500px;
+            width : 700px;
+            margin : 50px auto;
+            overflow : hidden;
+            position : relative;
+        }
+
+        .container .slides{
+            height : calc(20% - 5px);
+            width : 100%;
+            display : flex;
+            align-items : center;
+            justify-content : space-between;
+            position : absolute;
+            bottom : 4px; Left : 0;
+        }
+
+        .container .slides > img{
+            height : 100%;
+            width : calc(20% - 5px);
+            border : 2px solid black;
+            object-fit: cover;
+            cursor : pointer;
+        }
+
+        .container .slides > img:hover{
+            filter : grayscale();
+        }
+
+        .big-screen{
+            position : absolute;
+            top : 0; Left : 0;
+            height : calc(80% - 10px);
+            width : calc(100% - 5px);
+            border : 4px solid red; 
+        }
+
+        .big-screen > img{
+            height : 100%;
+            width : 100%;
+            object-fit : cover;
+        }
+    </style>
+
+    <script src = "jquery.js" charset = "utf-8">
+        // 제품 이미지 슬라이드 구현 (best) -> 제품 선택하면 사용한 제품에 대한 데이터 값이 개인정보로 넘어가도록
+        // 최선 : 이미지 누르면 투명화 or 테두리로 선택 느낌나도록 script 구현 (jQuery.js 다운)
+    </script>
+
+    <div class = "container">
+        <div class = "big-screen">
+            <img src="./skin/images/LBPD10016406_25408_1.jpg" alt="">
+        </div>
+        <div class = "slides">
+            <img src="./skin/images/LBPD10016406_25408_1.jpg" alt="">
+            <img src="./skin/images/LBPD10018485_28502_1.jpg" alt="">
+            <img src="./skin/images/LBPD10018491_28508_1.jpg" alt="">
+            <img src="./skin/images/LBPD10018492_28509_1.jpg" alt="">
+            <img src="./skin/images/LBPD10018850_28913_1.jpg" alt="">
+        </div>
+    </div>
+
+    <script type = "text/javascript">
+        $(document).ready(function(){
+            $('.container .slides > img').click(function()
+            {
+                var $smallImages = $(this).attr('src');
+                $('.big-screen > img').attr('src', $smallImages)
+            }); 
+        });
+    </script>
+
+-->
+
+
+
+
+
+</body>
+</html>
