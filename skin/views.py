@@ -9,9 +9,9 @@ def skin(request):
 def skincheck(request):
     images = Product.objects.all()
     photos = Photo.objects.all()
-    print(images)
-    print('---') 
-    print(photos)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    # print(images)
+    # print('---') 
+    # print(photos)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     return render(request, 'skincheck.html', {'images':images, 'photos':photos}) 
 
 def base(request):
