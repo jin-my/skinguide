@@ -4,7 +4,7 @@ from .models import Photo, Product #model에 있는 클래스를 import
 
 # Create your views here.
 def skin(request):
-    return render(request, 'skintest.html')
+    return render(request, 'skinmain.html')
 
 def skincheck(request):
     images = Product.objects.all()

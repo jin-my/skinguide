@@ -18,8 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
     #로그인 페이지로 이동
     path('user/', include('user.urls')),
-    path('skin/', include('skin.urls')),
+    path('', include('skin.urls')),
 ]
