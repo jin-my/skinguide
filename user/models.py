@@ -8,4 +8,8 @@ class User(AbstractUser):
     # password=models.CharField(max_length=300, null = True)
     skintype=models.CharField(max_length=5, null = True)
     gender=models.CharField(max_length=2, null = True)
+    # product=models.ForeignKey(skin_models.Product, on_delete=models.CASCADE, null=True)
+
+class Userproduct(models.Model):
+    userid=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     product=models.ForeignKey(skin_models.Product, on_delete=models.CASCADE, null=True)
