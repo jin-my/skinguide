@@ -4,7 +4,7 @@ from skinguide import settings
 # Create your models here.
 
 class Product(models.Model):
-    objects = models.Manager()
+    # objects = models.Manager()
     title = models.CharField(max_length=150)
     brand = models.CharField(max_length=100, null = True)
     #image = models.ImageField(upload_to='images/',blank=True, null=True)

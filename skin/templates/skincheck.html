@@ -119,8 +119,15 @@ select page
 <!-- model에 만든 class를 views에서 class의 객체를 가져오면 data를 다룰 수 있다 -->
 
 
-        {% for image in images.all %}
-            <p>{{image.title}}</p>
+        {% for image in images %}
+            {% for photo in photos %}
+                {% if image.id == photo.product_id %}
+                <!-- {{image.id}} -->
+                    [{{image.brand}}] {{image.title}} <br>
+                    <img style="width=100%;height=100%;object-fit:contain;" src={{photo.image.url}} alt="product img">
+                    <br><br>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
     
     </section>
