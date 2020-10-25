@@ -3,6 +3,7 @@
 select page
 {% endblock %}
 {% block content %}
+{% load static %}
 
 <!-- 사용자의 피부 타입이랑 기존 제품 후기? 같은 거 조사해서 정보를 추가하고 넘겨주는 페이지 -->
 
@@ -13,16 +14,17 @@ select page
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>skincheck</title>
-    <link rel="stylesheet" type="text/css" href="skincheck.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/skincheck.css' %}"/>
 
 </head>
-<body>
+
+<body class="body-skinguide">
         
     <!-- 피부 타입 기입한 (4가지 지표에 체크) -->
 
     <!-- 피부 타임 : 건성(D)지성(O) // 민감성(S)저항성(R) // 색소성(P)비색소성(N) // 주름성(W)탄력성(T) -->
 
-    <link rel="stylesheet" href="../styles/skincheckbox.css">
+    <!-- <link rel="stylesheet" href="../styles/skincheckbox.css"> -->
         
     <section>
         <h1>css test</h1>
