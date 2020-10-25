@@ -4,7 +4,7 @@ select page
 {% endblock %}
 {% block content %}
 {% load static %}
-
+{% csrf_token %}
 <!-- 사용자의 피부 타입이랑 기존 제품 후기? 같은 거 조사해서 정보를 추가하고 넘겨주는 페이지 -->
 
 
@@ -73,9 +73,13 @@ select page
             <input type="radio" name = "check_skin_type" value = "T">탄력성
         </form>
         <br><br>
-        <button onclick = "dontknow()">모름</button>
-        <button onclick = "values()">다음</button>
-        
+            <button onclick = "dontknow()">모름</button>
+            <button onclick = "values()">확인</button>
+        <form action="{% url 'skin:skincheck' %}" method="post">
+            <input name="stresult" id='stresult'><br><br>
+            
+            <input type="submit" value="글쓰기">
+        </form>
 
         <!-- 완료 버튼 누르면 피부 타입에 대한 데이터 값이 개인정보로 넘어가도록 -->
     </section>

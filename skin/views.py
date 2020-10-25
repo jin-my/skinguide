@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Photo, Product #model에 있는 클래스를 import
-
+from user.models import User, Userproduct
 # Create your views here.
 def skin(request):
     return render(request, 'skinmain.html')
@@ -27,6 +27,23 @@ def recommend(request):
     images = Product.objects.all()
     photos = Photo.objects.all()
     return render(request, 'recommend.html', {'images':images, 'photos':photos}) 
+
+def createskintype(request):
+    print(request.method)
+    if(request.method == 'POST'):
+        post = User()
+        post.skintype = request.POST['stresult']
+        post.user = request.user
+        # post.body = request.POST['body']
+        post.save()
+    return redirect('skin:userproduct')
+
+# def update(request, post_id):
+#     board = get_object_or_404(Board, pk=post_id)
+#     board.title = request.POST['title']
+#     board.body = request.POST['body']
+#     board.save()
+#     return redirect('board:detail', post_id)
 
 
 # 사진 불러와서 출력하는 용도 객체 만들기
