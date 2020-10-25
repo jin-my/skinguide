@@ -1,18 +1,20 @@
-<h1>
-    skin test
-</h1>
-
-<h1>test</h1>
+{% extends "base.html" %}
+{% block title %}
+select page
+{% endblock %}
+{% block content %}
 
 <!-- 사용자의 피부 타입이랑 기존 제품 후기? 같은 거 조사해서 정보를 추가하고 넘겨주는 페이지 -->
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>skincheck</title>
+    <link rel="stylesheet" type="text/css" href="skincheck.css"/>
+
 </head>
 <body>
         
@@ -23,8 +25,8 @@
     <link rel="stylesheet" href="../styles/skincheckbox.css">
         
     <section>
-        
-        <h2>당신의 피부 타입은?</h2>
+        <h1>css test</h1>
+        <h2>당신의 피부 타입은????</h2>
         <h4>[Baumann Skin Types]</h4>
 
         <script>
@@ -32,69 +34,92 @@
             function value_check() 
             {
                 var check_count = document.getElementsByName("chk").length;
- 
+                alert('aa');
                 for (var i=0; i<check_count; i++) 
                 {
                    if(document.getElementsByName("chk")[i].checked == true) 
                     {
-                    alert(document.getElementsByName("chk")[i].value);
+                    // alert(document.getElementsByName("chk")[i].value);
+                    alert('aa');
                     }
                 }
             }
+
+            function values(){
+                var selected = document.querySelectorAll('input[name="check_skin_type"]:checked');
+                var selectedstring = '';
+                
+                for(var i=0; i<selected.length; i++){
+                    selectedstring += selected[i].value;
+                }
+                if (selectedstring.length < 4){
+                    alert('모두 선택해주세요.');
+                }else{
+                    alert(selectedstring);
+                }
+                
+            }
+
+            function productvalue(){
+                var check_count = document.getElementsByName("product_check").length;
+                
+                // var checked = document.querySelectorAll('input[name="product_check"]:checked');
+                var checkedstring = '';
+                for(var i=0; i<check_count; i++){
+                    if (document.getElementsByName("product_check")[i].checked == true) {
+                        checkedstring += document.getElementsByName("product_check")[i].value;
+                        checkedstring += ', ';
+                    }
+                    // checkedstring += checked[i].value;
+                    
+                }
+                alert(checkedstring);
+            }
+            
         </script>
 
         <form name = "form_do">
             1. 건성 vs 지성 [D/O]
             <br>
-            <input type = "checkbox" class = "chk" id = "chk" name = "chk"><label class = "DO" for="chk"></label>
+            <!-- <input type = "checkbox" class = "chk" id = "chk" name = "chk"><label class = "DO" for="chk"></label> -->
             <br>
-            <input type="radio" name = "check_skin_type" value = "Dry">건성
-            <input type="radio" name = "check_skin_type" value = "Oily">지성
+            <input type="radio" name = "check_skin_type" value = "D">건성
+            <input type="radio" name = "check_skin_type" value = "O">지성
             <!-- <input type="radio" name = "check_skin_type" value = "Null">모르겠음 -->
-
-            <button onclick = "value_check()">체크된 객체 value 가져오기</button>
+            <!-- <button onclick = "value_check()">check value</button> -->
         </form>
-
+        <br><br>
         <form name = "form_sr">
             2. 민감성 vs 저항성 [S/R]
             <br>
-            <input type = "checkbox" class = "chk" id = "chk"><label class = "SR" for="chk"></label>
+            <!-- <input type = "checkbox" class = "chk" id = "chk"><label class = "SR" for="chk"></label> -->
             <br>
-            <input type="radio" name = "check_skin_type" value = "Sensitive">민감성
-            <input type="radio" name = "check_skin_type" value = "Resistant">저항성
-
-            <button onclick = "value_check()">체크된 객체 value 가져오기</button>            
+            <input type="radio" name = "check_skin_type" value = "S">민감성
+            <input type="radio" name = "check_skin_type" value = "R">저항성
         </form>
-
+        <br><br>
         <form name = "form_pn">
             3. 색소성 vs 비색소성 [P/N]
             <br>
-            <input type = "checkbox" class = "chk" id = "chk"><label class = "PN" for="chk"></label>
+            <!-- <input type = "checkbox" class = "chk" id = "chk"><label class = "PN" for="chk"></label> -->
             <br>
-            <input type="radio" name = "check_skin_type" value = "Pigmented">색소성
-            <input type="radio" name = "check_skin_type" value = "NonPigmented">비색소성
-
-            <button onclick = "value_check()">체크된 객체 value 가져오기</button>            
+            <input type="radio" name = "check_skin_type" value = "P">색소성
+            <input type="radio" name = "check_skin_type" value = "N">비색소성
         </form>
-
+        <br><br>
         <form name = "form_wt">
             4. 주름성 vs 탄력성 [W/T]
             <br>
-            <input type = "checkbox" class = "chk" id = "chk"><label class = "WT" for="chk"></label>
+            <!-- <input type = "checkbox" class = "chk" id = "chk"><label class = "WT" for="chk"></label> -->
             <br>
-            <input type="radio" name = "check_skin_type" value = "Wrinkled">주름성
-            <input type="radio" name = "check_skin_type" value = "Tight">탄력성
-            
-            <button onclick = "value_check()">체크된 객체 value 가져오기</button>
+            <input type="radio" name = "check_skin_type" value = "W">주름성
+            <input type="radio" name = "check_skin_type" value = "T">탄력성
         </form>
-        
-        <input type="button" value = "입력완료">
+        <br><br>
+        <button onclick = "values()">선택된 피부타입</button> 
         <input type="button" value = "모르겠다"> <!-- 다음에는 test page -->
 
         <!-- 완료 버튼 누르면 피부 타입에 대한 데이터 값이 개인정보로 넘어가도록 -->
-
-
-
     </section>
 
     
@@ -115,15 +140,40 @@
 <!-- main 페이지에서 admin에 저장한 data (사진)를 가져오자 -->
 <!-- model에 만든 class를 views에서 class의 객체를 가져오면 data를 다룰 수 있다 -->
 
-
-        {% for image in images.all %}
-            <p>{{image.title}}</p>
+        <fieldset style="text-align: center;">
+            <div class="container-fluid">
+                <div class="row">
+                    <form name = "form_product">
+        {% for image in images %}
+            {% for photo in photos %}
+                {% if image.id == photo.product_id %}
+                <!-- {{image.id}} -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- <p style="text-align: center;">
+                        <img style="width:250px;height:250px;" src={{photo.image.url}} alt="product img"><br>
+                    </p> -->
+                    
+                    <input type="checkbox" name="product_check" id={{image.id}} value={{image.id}} style="text-align: center;">     
+                    <label for={{image.id}}>
+                        <img style="width:250px;height:250px;" src={{photo.image.url}} alt="product img"><br>
+                        [{{image.brand}}] {{image.title}}
+                    </label>
+                        <br><br><br><br>
+                    
+                </div>
+                {% endif %}
+            {% endfor %}
         {% endfor %}
-    
+                    </form> 
+                    <!-- <input type='submit'> -->
+                    <button onclick = "productvalue()">선택된 제품</button> 
+                <!-- </div> -->
+            </div>
+            </fieldset>
     </section>
 
 
-
+    {% endblock %}
 
 
 
