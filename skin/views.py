@@ -28,6 +28,12 @@ def recommend(request):
     photos = Photo.objects.all()
     return render(request, 'recommend.html', {'images':images, 'photos':photos}) 
 
+def skintypetest(request):
+    return render(request, 'skintypetest.html')
+
+def yourskintype(request):
+    return render(request, 'yourskintype.html')
+
 
 # 사진 불러와서 출력하는 용도 객체 만들기
 
