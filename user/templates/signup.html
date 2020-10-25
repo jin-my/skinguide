@@ -9,25 +9,26 @@ select page
 <br>
 <br>
 
-회원가입 페이지
-<br>
+<h1>회원가입</h1>
+<br><br>
 <form action="" method = "POST">
     {% csrf_token %}
     <p>아이디</p>
     <input name = "username" type="text">
-    <br>
+    <br><br>
     <p>이메일</p>
-    <input name = "email" type="text">
-    <br>
+    <input name = "email" type="email">
+    <br><br>
     <p>비밀번호</p>
-    <input name = "password" type="text">
-    <br>
+    <input name = "password" type="password">
+    <br><br>
     <p>성별</p>
-    <input name = "gender" type="text">
-    <br>
+    <input name = "gender" type="radio" value="남">남자 
+    <input name = "gender" type="radio" value="여">여자
+    <br><br>
     <p>스킨타입</p>
     <input name = "skintype" type="text">
-    <br>
+    <br><br>
     <input type="submit" value="회원가입">
 </form>
 

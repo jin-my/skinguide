@@ -4,8 +4,12 @@ from skinguide import settings
 from skin import models as skin_models
 # Create your models here.
 class User(AbstractUser):
-    # id password last_login is_superuser username first_name last_name email is_staff is_activate date_joinedㄴ
-    password = models.CharField(max_length = 10, null = True)
+    # id password last_login is_superuser username first_name last_name email is_staff is_activate date_joined
+    # password=models.CharField(max_length=300, null = True)
     skintype=models.CharField(max_length=5, null = True)
     gender=models.CharField(max_length=2, null = True)
+    # product=models.ForeignKey(skin_models.Product, on_delete=models.CASCADE, null=True)
+
+class Userproduct(models.Model):
+    userid=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     product=models.ForeignKey(skin_models.Product, on_delete=models.CASCADE, null=True)
