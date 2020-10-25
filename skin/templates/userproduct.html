@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}
+select page
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- 사용자의 피부 타입이랑 기존 제품 후기? 같은 거 조사해서 정보를 추가하고 넘겨주는 페이지 -->
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user product</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/skincheck.css' %}"/>
+    <script src="{% static 'js/skin.js' %}"></script>
+
+
+</head>
+
+<body>
+    {% if user.is_authenticated %}    
+    <!-- 피부 타입 기입한 (4가지 지표에 체크) -->
+
+    <!-- 피부 타임 : 건성(D)지성(O) // 민감성(S)저항성(R) // 색소성(P)비색소성(N) // 주름성(W)탄력성(T) -->
+
+    <!-- <link rel="stylesheet" href="../styles/skincheckbox.css"> -->
+
+    <section class="body-skinguide">
+        <h2>당신이 사용한 LOHBs 제품은?</h2>
+        <h4>Your PICK</h4>
+
+        
+<!-- 객체 정하기 -->
+<!-- main 페이지에서 admin에 저장한 data (사진)를 가져오자 -->
+<!-- model에 만든 class를 views에서 class의 객체를 가져오면 data를 다룰 수 있다 -->
+
+        <fieldset style="text-align: center;">
+            <div class="container-fluid">
+                <div class="row">
+                    <form name = "form_product">
+        {% for image in images %}
+            {% for photo in photos %}
+                {% if image.id == photo.product_id %}
+                <!-- {{image.id}} -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- <p style="text-align: center;">
+                        <img style="width:250px;height:250px;" src={{photo.image.url}} alt="product img"><br>
+                    </p> -->
+                    
+                    <input type="checkbox" name="product_check" id={{image.id}} value={{image.id}} style="text-align: center;">     
+                    <label for={{image.id}}>
+                        <img style="width:250px;height:250px;" src={{photo.image.url}} alt="product img"><br>
+                        [{{image.brand}}] {{image.title}}
+                    </label>
+                        <br><br><br><br>
+                    
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+                    </form> 
+                    <!-- <input type='submit'> -->
+                    <button onclick = "productvalue()">다음</button> 
+                <!-- </div> -->
+            </div>
+            </fieldset>
+    </section>
+
+
+    {%else%}
+    <script>
+        window.onload=dontlogin()
+        location.href="{% url 'user:login' %}";
+    </script>
+
+    {%endif%}
+    {% endblock %}
+</body>
+</html>
