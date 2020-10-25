@@ -77,9 +77,15 @@ select page
             <button onclick = "dontknow()">모름</button>
             <button onclick = "values()">확인</button>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <form action="{% url 'skin:skincheck' %}" method="post">
             {% csrf_token %}
             <input name="result" id='result'><br><br>
+=======
+        <form id="skincheckform" action="{% url 'skin:createskintype' %}" method="post">
+            {% csrf_token %}
+            <input name="stresult" id='stresult' type="hidden"><br><br>
+>>>>>>> d1a726d3994fb67d11c0ce3a8cba7dbb8af5491e
 =======
         <form id="skincheckform" action="{% url 'skin:createskintype' %}" method="post">
             {% csrf_token %}

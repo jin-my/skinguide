@@ -45,9 +45,14 @@ def createskintype(request):
     print(request.method)
     if(request.method == 'POST'):
 <<<<<<< HEAD
+<<<<<<< HEAD
         post = User()
         post.skintype = request.POST['result']
         post.user = request.user
+=======
+        post = request.user
+        post.skintype = request.POST['stresult']
+>>>>>>> d1a726d3994fb67d11c0ce3a8cba7dbb8af5491e
 =======
         post = request.user
         post.skintype = request.POST['stresult']

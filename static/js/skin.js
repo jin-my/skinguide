@@ -30,6 +30,9 @@ function values(){
         // alert(selectedstring);
         document.getElementById("stresult").value = selectedstring;
         document.getElementById('skincheckform').submit()
+<<<<<<< HEAD
+>>>>>>> d1a726d3994fb67d11c0ce3a8cba7dbb8af5491e
+=======
 >>>>>>> d1a726d3994fb67d11c0ce3a8cba7dbb8af5491e
     }
     
