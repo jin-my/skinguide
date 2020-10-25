@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-
+from django.contrib.auth.models import AbstractUser
 from .models import Photo, Product #model에 있는 클래스를 import
 from user.models import User, Userproduct
+from django.contrib.auth import authenticate,login,logout
+
+
 # Create your views here.
 def skin(request):
     return render(request, 'skinmain.html')
@@ -9,7 +12,11 @@ def skin(request):
 def skincheck(request):
     # print(images)
     # print('---') 
-    # print(photos)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    # print(photos)   
+    #user = User.objects.create_user(username,email,password)
+    if request.method == "POST":                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+        User.skintype = request.POST["result"]
+        #user.save()
     return render(request, 'skincheck.html') 
 
 def userproduct(request):
@@ -32,7 +39,7 @@ def createskintype(request):
     print(request.method)
     if(request.method == 'POST'):
         post = User()
-        post.skintype = request.POST['stresult']
+        post.skintype = request.POST['result']
         post.user = request.user
         # post.body = request.POST['body']
         post.save()
