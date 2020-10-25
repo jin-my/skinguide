@@ -30,10 +30,10 @@ recommend page
                     </label>
                 {% endif %}
                 {% if image.skintype == "ALL" %}
-                    <label for={{image.id}}>
-                        <img style="width:250px;height:250px;" src={{photo.image.url}} alt="product img"><br>
-                        [{{image.brand}}] {{image.title}}
-                    </label>
+                <label for={{image.id}}>
+                    <img style="width:250px;height:250px;" src={{photo.image.url}} alt="product img"><br>
+                    [{{image.brand}}] {{image.title}}
+                </label>
                 {% endif %}
             {% endif %}
         {% endfor %}
