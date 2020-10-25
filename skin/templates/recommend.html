@@ -1,0 +1,40 @@
+<!-- 각 피부타입에 따라 제품 추천 페이지-->
+{% extends "base.html" %}
+{% block title %}
+recommend page
+{% endblock %}
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>피부타입 {{user.skintype}}에 따른 추천상품</h2>
+
+    {% for image in images %}
+        {% for photo in photos %}
+            {% if image.id == photo.product_id %}
+                {% if user.skintype == image.skintype %}
+                    <label for={{image.id}}>
+                        <img style="width:250px;height:250px;" src={{photo.image.url}} alt="product img"><br>
+                        [{{image.brand}}] {{image.title}}
+                    </label>
+                {% endif %}
+                {% if image.skintype == "ALL" %}
+                    <label for={{image.id}}>
+                        <img style="width:250px;height:250px;" src={{photo.image.url}} alt="product img"><br>
+                        [{{image.brand}}] {{image.title}}
+                    </label>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+
+</body>
+</html>
+
+{% endblock %}
