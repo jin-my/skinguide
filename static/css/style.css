@@ -1,0 +1,93 @@
+/* base.html style 태그 */
+a{
+    text-decoration:none 
+}
+
+.header-base {
+margin: 0vh;
+padding: 0vh;
+}
+
+/* 검색창 */
+.div-base {
+    height: 40px;
+    width: 400px;
+    border: 1px solid orangered;
+    background: white;
+    margin-left: 10px;
+    margin-top: 9vh;
+    float: left;
+}
+
+.input-base {
+    font-size: 25px;
+    width: 325px;
+    border: 0px;
+    outline: none;
+    margin: 0px;
+}
+
+button {
+    width: 50px;
+    height: 100%;
+    border: 0px;
+    background: orangered;
+    outline: none;
+    float: right;
+    color: white;
+}
+
+/*로그인, 회원가입*/
+.p-base {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/*로고*/
+
+.img-base {
+    margin-bottom: 3vh;
+    margin-top: 5vh;
+    margin-left: 5vh;
+    height: 60px;
+    width: 230px;
+    float: left;
+}
+
+/*네브바*/
+
+body {
+    margin: 0;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    list-style-type: none;
+}
+
+.nav-item {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.nav-item a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item:nth-child(1) {
+    background-color: orangered;
+}
+
+.nav-item:hover {
+    background-color: orangered;
+}
+
+/*select box*/
