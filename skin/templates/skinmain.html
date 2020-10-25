@@ -10,24 +10,170 @@ select page
 <html lang="ko">
     <head>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="{% static 'js/main.js' %}"></script>
     </head>
     
-    <body>
-        
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (1).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (2).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (3).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (4).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (5).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (6).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (7).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (8).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (9).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (11).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (12).PNG' %}">
-        <img style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (13).PNG' %}">
+    <style>
+        /* 브라우저 마진과 패딩 리셋 */
+        * {margin:0;padding:0;}
+    
+        /* INPUT 가리기 */
+        .section input[id*="slide"] {display:none;}
+    
+        /* 슬라이드 영역 - max-width 크기를 조절해주면 됩니다*/
+        .section .slidewrap {max-width:100%;margin:0 auto;overflow:hidden;}
+        .section .slidelist {white-space:nowrap;font-size:0;}
+        .section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+        .section .slidelist > li > a {display:block;position:relative;}
+        .section .slidelist > li > a img {width:100%;}
+    
+        /* 좌우로 넘기는 LABEL버튼에 대한 스타일 */
+        .section .slidelist label {position:absolute;z-index:1;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+        .section .slidelist .left {left:30px;background:url("{% static 'img/left.png' %}") center center / 100% no-repeat;}
+        .section .slidelist .right {right:30px;background:url("{% static 'img/right.png' %}") center center / 100% no-repeat;}
+    
+        /* INPUT 체크되면 변화값이 li까지 전달되는 스타일 */
+        .section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+        .section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+        .section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+        .section input[id="slide04"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-300%);}
+        .section input[id="slide05"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-400%);}
+        .section input[id="slide06"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-500%);}
+        .section input[id="slide07"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-600%);}
+        .section input[id="slide08"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-700%);}
+        .section input[id="slide09"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-800%);}
+        .section input[id="slide10"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-900%);}
+        .section input[id="slide11"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-1000%);}
+        .section input[id="slide12"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-1100%);}
 
+        
+        </style>
+    </head>
+    <body>
+        <div class="section">
+            <input type="radio" name="slide" id="slide01" checked>
+            <input type="radio" name="slide" id="slide02">
+            <input type="radio" name="slide" id="slide03">
+            <input type="radio" name="slide" id="slide04">
+            <input type="radio" name="slide" id="slide05">
+            <input type="radio" name="slide" id="slide06">
+            <input type="radio" name="slide" id="slide07">
+            <input type="radio" name="slide" id="slide08">
+            <input type="radio" name="slide" id="slide09">
+            <input type="radio" name="slide" id="slide10">
+            <input type="radio" name="slide" id="slide11">
+            <input type="radio" name="slide" id="slide12">
+
+    
+            <div class="slidewrap">
+                <ul class="slidelist">
+                    <li>
+                        <a>
+                            <label for="slide12" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (1).PNG' %}">
+                            <label for="slide02" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide01" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (2).PNG' %}">
+                            <label for="slide03" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide02" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (3).PNG' %}">
+                            <label for="slide04" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide03" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (4).PNG' %}">
+                            <label for="slide05" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide04" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (5).PNG' %}">
+                            <label for="slide06" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide05" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (6).PNG' %}">
+                            <label for="slide07" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide06" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (7).PNG' %}">
+                            <label for="slide08" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide07" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (8).PNG' %}">
+                            <label for="slide09" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide08" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (9).PNG' %}">
+                            <label for="slide10" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide09" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (11).PNG' %}">
+                            <label for="slide11" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide10" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (12).PNG' %}">
+                            <label for="slide12" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide11" class="left"></label>
+                            <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (13).PNG' %}">
+                            <label for="slide01" class="right"></label>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </body>
+
+<!-- 
+    <body>
+        <a class="w3-btn-floating" onclick="plusDivs(-1)">&#10094;</a>
+        <a class="w3-btn-floating" onclick="plusDivs(+1)">&#10095;</a>
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (1).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (2).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (3).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (4).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (5).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (6).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (7).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (8).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (9).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (11).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (12).PNG' %}">
+        <img class="mySlides" style="max-width: 100%; max-height: 100%;" src="{% static 'img/slide (13).PNG' %}">
+        
+    </body> -->
     
 </html>
 
