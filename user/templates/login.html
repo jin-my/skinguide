@@ -6,29 +6,45 @@ select page
 {% block content %}
 
 <br>
-<br>
-<br>
+
+<style>
+    a {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    h5 {
+        color : grey;
+    }
 
 
-로그인 페이지 입니당
+</style>
+
+<h2>로그인</h2>
 <br>
-<a href="{% url 'user:signup' %}">회원가입</a>
-<br><br>
-{% if user.is_authenticated %}
-    로그인 완료
-    {{user.username}}님 환영합니다.
-    <a href="{% url 'user:logout' %}">로그아웃</a>
-{% else %}
+<h5>계정이 없으신가요?</h5>
     
-
-<form action="" method = "POST">
-    {% csrf_token %}
-    <input name = "username" type="text">
+    <a href="{% url 'user:signup' %}">회원가입</a>
     <br><br>
-    <input name = "password" type="password">
-    <br>
-    <input type = "submit" value="로그인">
-</form>
+    {% if user.is_authenticated %}
+        로그인 완료
+        {{user.username}}님 환영합니다.
+        <a href="{% url 'user:logout' %}">로그아웃</a>
+    {% else %}
+        
+
+    <form action="" method = "POST">
+        {% csrf_token %}
+        ID : <input name = "username" type="text">
+        <br><br>
+        PW : <input name = "password" type="password">
+        <br>
+        <br>
+        <input type = "submit" value="로그인">
+    </form>
+
+
+
 {% endif %}
 
 
