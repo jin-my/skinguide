@@ -11,4 +11,5 @@ urlpatterns = [
     path('recommend/',views.recommend, name = 'recommend'),
     path('skintypetest/', views.skintypetest, name = 'skintypetest'),
     path('yourskintype/',views.yourskintype, name = 'yourskintype'),
+    path('saveskintype',views.createskintype, name='createskintype'),
 ]

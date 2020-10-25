@@ -247,7 +247,7 @@
     <div class="modal"> 
         <div class="modal-content"> 
             <span class="close-button">&times;</span> 
-            <h1 class="title">당신은 ____입니다!</h1> 
+            <h1 class="title">당신은 <span id="result">____</span>입니다!</h1> 
             <!--<form action="#post.php" method="POST"> -->
             <input type="button" id="cancel" value="피부유형 등록하기" onclick="location.href='../skincheck'"> 
             </form> 
@@ -260,10 +260,12 @@
         var trigger = document.querySelector(".trigger"); 
         var closeButton = document.querySelector(".close-button"); 
         var cancelButton = document.querySelector("#cancel");
+        var result = document.getElementById('result');
 
     //console.log(modal);
 
     function toggleModal() { 
+        result.innerText = "ABCD";
             modal.classList.toggle("show-modal"); 
         }
 
