@@ -23,8 +23,14 @@ function values(){
     if (selectedstring.length < 4){
         alert('모두 선택해주세요.');
     }else{
+<<<<<<< HEAD
         // alert(selectedstring); stresult -> result
         document.getElementById("result").value = selectedstring;
+=======
+        // alert(selectedstring);
+        document.getElementById("stresult").value = selectedstring;
+        document.getElementById('skincheckform').submit()
+>>>>>>> d1a726d3994fb67d11c0ce3a8cba7dbb8af5491e
     }
     
 }
