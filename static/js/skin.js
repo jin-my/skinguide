@@ -23,7 +23,8 @@ function values(){
     if (selectedstring.length < 4){
         alert('모두 선택해주세요.');
     }else{
-        alert(selectedstring);
+        // alert(selectedstring);
+        document.getElementById("stresult").value = selectedstring;
     }
     
 }
