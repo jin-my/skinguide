@@ -1,36 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>base page</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="base.css">
-    <style type="text/css">
-        a {text-decoration:none }
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        a{
+            text-decoration:none 
+        }
+
+        .header-base {
+        margin: 0vh;
+        padding: 0vh;
+        }
+
+        /* 검색창 */
+        .div-base {
+            height: 40px;
+            width: 400px;
+            border: 1px solid orangered;
+            background: white;
+            margin-left: 10px;
+            margin-top: 9vh;
+            float: left;
+        }
+
+        .input-base {
+            font-size: 25px;
+            width: 325px;
+            border: 0px;
+            outline: none;
+            margin: 0px;
+        }
+
+        button {
+            width: 50px;
+            height: 100%;
+            border: 0px;
+            background: orangered;
+            outline: none;
+            float: right;
+            color: white;
+        }
+
+        /*로그인, 회원가입*/
+        .p-base {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        /*로고*/
+
+        .img-base {
+            margin-bottom: 3vh;
+            margin-top: 5vh;
+            margin-left: 5vh;
+            height: 60px;
+            width: 230px;
+            float: left;
+        }
+
+        /*네브바*/
+
+        body {
+            margin: 0;
+        }
+
+        .nav-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+            list-style-type: none;
+        }
+
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-item:nth-child(1) {
+            background-color: orangered;
+        }
+
+        .nav-item:hover {
+            background-color: orangered;
+        }
+
+        /*select box*/
+
     </style>   
+
 </head>
+
+<script> </script>
+
 <body>
 
-
-    <header>
-        <a href=""><img src="../images/LOGO.png" alt="LOGO"></a>
-        <div>
-            <input type="text" placeholder="LOHBs만의 맞춤서비스">
+    <header class="header-base">
+        <a href="{% url 'skin:skin' %}"><img class="img-base" src="https://static.lotteon.com/p/common/foCommon/assets/img/logo_lohbs@2x.png" alt="LOGOFILE"></a>
+        <div class="div-base">
+            <input class="input-base" type="text" placeholder="LOHBs만의 맞춤서비스">
             <button>Go</button>
         </div>
-        <a href=""><p><b>로그인</b></p></a>  <a href=""><p><b>회원가입</b></p></a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'user:logout' %}"><p class="p-base"><b>로그아웃</b></p></a>  
+        <p class="p-base">{{user.username}}님 환영합니다.</p>
+        {% else %}
+        <a href="{% url 'user:login' %}"><p class="p-base"><b>로그인</b></p></a>  
+        <a href="{% url 'user:signup' %}"><p class="p-base"><b>회원가입</b></p></a>
+        {% endif %}
     </header>
+
     <nav>
         <ul class="nav-container">
-            <li class="nav-item"><a href=""><b>홈</b></a></li>
+            <li class="nav-item"><a href="{% url 'skin:skin' %}"><b>홈</b></a></li>
             <li class="nav-item"><a href=""><b>랭킹</b></a></li>
             <li class="nav-item"><a href=""><b>MD추천</b></a></li>
             <li class="nav-item"><a href=""><b>롭스딜</b></a></li>
             <li class="nav-item"><a href=""><b>이벤트</b></a></li>
             <li class="nav-item"><a href=""><b>기획전</b></a></li>
-            <li class="nav-item"><a href=""><b>SKIN GUIDE</b></a></li>
+            <li class="nav-item"><a href="{% url 'skin:skincheck' %}"><b>SKIN GUIDE</b></a></li>
         </ul>
     </nav>
 
+    {% block content %}{% endblock %}
 </body>
 </html>

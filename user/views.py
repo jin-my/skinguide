@@ -18,14 +18,14 @@ def login_view(request):
         #if User.username==username and User.password == password:
             print("인증성공")
             login(request, user)
-            return render(request,"skintest.html")
+            return redirect("skin:skin")
         else:
             print("인증실패")
     return render(request, "login.html")
 
 def logout_view(request):
     logout(request)
-    return redirect("user:login") 
+    return redirect("skin:skin") 
 
 def signup_view(request):
     if request.method == "POST":

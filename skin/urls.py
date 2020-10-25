@@ -6,4 +6,5 @@ urlpatterns = [
     path('skincheck/', views.skincheck, name = 'skincheck'),
     path('base/', views.base, name = 'base'),
     path('select/', views.select, name = 'select'),
+    path('recommend/',views.recommend, name = 'recommend'),
 ]
