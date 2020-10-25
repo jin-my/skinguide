@@ -1,19 +1,35 @@
 
+{% extends "base.html" %}
+{% block title %}
+select page
+{% endblock %}
+{% load static %}
+{% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-
     </head>
+    
     <body>
-        <h1>
-            skin main
-        </h1>
-        <img style="width:250px;height:250px;" src = "슬라이드1.PNG">
-        <img src = "../slide/slide10.PNG">
-        <img src="C:\Users\hgo64\OneDrive\Desktop\skinguide\skin\slide\슬라이드1.PNG">
-        
+        <link rel="stylesheet" href="{% static 'css/skinmain.css' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide1.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide2.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide3.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide4.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide5.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide6.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide7.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide8.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide9.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide10.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide11.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide12.PNG' %}">
+        <img style="width:800px;height:550px;" src="{% static 'img/slide13.PNG' %}">
+
     </body>
     
 </html>
 
 
+{% endblock %}
