@@ -37,9 +37,8 @@ def yourskintype(request):
 def createskintype(request):
     print(request.method)
     if(request.method == 'POST'):
-        post = User()
+        post = request.user
         post.skintype = request.POST['stresult']
-        post.user = request.user
         # post.body = request.POST['body']
         post.save()
     return redirect('skin:userproduct')

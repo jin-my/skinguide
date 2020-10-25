@@ -72,14 +72,14 @@ select page
             <input type="radio" name = "check_skin_type" value = "W">주름성
             <input type="radio" name = "check_skin_type" value = "T">탄력성
         </form>
-        {% csrf_token %}
+        
         <br><br>
             <button onclick = "dontknow()">모름</button>
             <button onclick = "values()">확인</button>
-        <form action="{% url 'skin:skincheck' %}" method="post">
-            <input name="stresult" id='stresult'><br><br>
+        <form id="skincheckform" action="{% url 'skin:createskintype' %}" method="post">
+            {% csrf_token %}
+            <input name="stresult" id='stresult' type="hidden"><br><br>
             
-            <input type="submit" value="글쓰기">
         </form>
 
         <!-- 완료 버튼 누르면 피부 타입에 대한 데이터 값이 개인정보로 넘어가도록 -->

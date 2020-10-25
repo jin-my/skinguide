@@ -25,6 +25,7 @@ function values(){
     }else{
         // alert(selectedstring);
         document.getElementById("stresult").value = selectedstring;
+        document.getElementById('skincheckform').submit()
     }
     
 }
