@@ -23,3 +23,6 @@ def image(request):
     # boards = Board.objects.order_by('-created_at')
     
     return render(request, 'skincheck.html', {'images':images}) # key 값을 들여움
+
+def title(request):
+    title = Product.title()
