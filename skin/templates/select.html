@@ -4,6 +4,8 @@ select page
 {% endblock %}
 {% load static %}
 {% block content %}
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +17,12 @@ select page
 </head>
 
 <body>
+    
+    <section style="padding: 15%;">
 
+    
     <div id="stepsContainer">
-        <a href=""><div class="col-md-4 stepsBox">
+        <a href=""><div class="col-md-6 col-xs-12 stepsBox">
             <div class="claimSteps" id="stepOne">
                 <p class="claimStepNumber">1</p>
                 <p class="claimStepTitle">피부성향 테스트하기</p>
@@ -25,8 +30,8 @@ select page
             </div>
         </div>
         </a>
-        <a href="">
-            <div class="col-md-4 stepsBox">
+        <a href="{% url 'skin:skincheck' %}">
+            <div class="col-md-6 col-xs-12 stepsBox">
                 <div class="claimSteps" id="stepTwo">
                     <p class="claimStepNumber">2</p>
                     <p class="claimStepTitle">피부성향 등록하기</p>
@@ -34,8 +39,28 @@ select page
                 </div>
             </div>
         </a>
-    </div>
 
+        <a href="{% url 'skin:userproduct' %}">
+            <div class="col-md-6 col-xs-12 stepsBox">
+                <div class="claimSteps" id="stepThree">
+                    <p class="claimStepNumber">3</p>
+                    <p class="claimStepTitle">사용제품 등록하기</p>
+                    <p class="claimStepText">사용하는 제품을 기반으로 상품 추천을 위한 제품 등록</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="{% url 'skin:recommend' %}">
+            <div class="col-md-6 col-xs-12 stepsBox">
+                <div class="claimSteps" id="stepFour">
+                    <p class="claimStepNumber">4</p>
+                    <p class="claimStepTitle">제품 추천</p>
+                    <p class="claimStepText">자신의 피부성향과 사용제품을 분석하여 제품 추천</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    </section>
 </body>
 
 {% endblock %}

@@ -7,12 +7,15 @@ def skin(request):
     return render(request, 'skinmain.html')
 
 def skincheck(request):
-    images = Product.objects.all()
-    photos = Photo.objects.all()
     # print(images)
     # print('---') 
     # print(photos)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-    return render(request, 'skincheck.html', {'images':images, 'photos':photos}) 
+    return render(request, 'skincheck.html') 
+
+def userproduct(request):
+    images = Product.objects.all()
+    photos = Photo.objects.all()
+    return render(request, 'userproduct.html', {'images':images, 'photos':photos})
 
 def base(request):
     return render(request, 'base.html')

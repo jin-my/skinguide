@@ -12,8 +12,12 @@ recommend page
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="{% static 'js/skin.js' %}"></script>
+    
+    
 </head>
 <body>
+    {% if user.is_authenticated %}
     <h2>피부타입 {{user.skintype}}에 따른 추천상품</h2>
 
     {% for image in images %}
@@ -35,6 +39,14 @@ recommend page
         {% endfor %}
     {% endfor %}
 
+    {%else%}
+    <script>
+        window.onload=dontlogin()
+        location.href="{% url 'user:login' %}";
+    </script>
+
+    {%endif%}
+   
 
 </body>
 </html>
