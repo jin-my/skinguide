@@ -7,6 +7,7 @@ select page
 
 <br>
 
+<<<<<<< HEAD
 <h2>회원가입</h2>
 <br><br>
 <form action="" method = "POST">
@@ -29,6 +30,52 @@ select page
     <br><br>
     <input type="submit" value="회원가입">
 </form>
+=======
+<section>
+
+    <h2>회원가입</h2>
+    <br><br>
+    <form action="" method = "POST">
+        {% csrf_token %}
+        
+        아이디 : <input name = "username" type="text">
+        <br><br>
+        
+        이메일 : <input name = "email" type="email">
+        <br><br>
+        
+        비밀번호 : <input name = "password" type="password">
+        <br><br>
+        
+        성별 : <input name = "gender" type="radio" value="남">남자  
+        <input name = "gender" type="radio" value="여">여자
+        <br><br>
+        
+        피부유형 : <input name = "skintype" type="text">
+        <br><br>
+        <input type="submit" value="회원가입">
+    </form>
+
+</section>
+    
+
+<style>
+    input {
+        border-radius : 7px;
+        border-color : grey;
+
+    }
+
+    form {
+        size : 35px;
+    }
+
+    section {
+        text-align: center;
+    }
+    
+</style>
+>>>>>>> c4c3153cb3b848ed1b89c60ff6ae3f49defd3cc1
 
 
 
