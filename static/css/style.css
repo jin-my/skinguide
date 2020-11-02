@@ -15,101 +15,579 @@ a{
     top: 0;
 }
 
-.header-base {
-margin: 0vh;
-padding: 0vh;
+@media screen and (max-width: 510px) {
+
+    .header-base {
+        margin: 0vh;
+        padding: 0vh;
+        }
+        
+        
+        /*로고*/
+        
+        .img-base{
+            height: 5%;
+            width: 100%;
+        }
+        
+        .img-in {
+            /* width: 100%; */
+            /* height: 20px; */
+            /* width: 230px; */
+            /* float: right; */
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 0px;
+            /* margin-left: 5vh; */
+            margin-bottom: 20px;
+            
+            /* margin-left: 5vh; */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center; 
+            /* overflow: ; */
+            display: inline-block;
+            /* display:block; */
+            
+            /* height: 30px; */
+            /* width: auto; */
+        }
+        
+        /* 검색창 */
+        .div-base {
+            height: 50px;
+            width: 100%;
+            border: 1px solid rgb(104, 6, 87);
+            background: white;
+            /* margin-left: 20px; */
+            /* margin-left: 1vw; */
+            /* margin: 2px 2px 2px 2px; */
+            /* float: left; */
+            /* z-index: 1; */
+            
+            
+        }
+        
+        .input-base {
+            padding-top: 6px;
+            padding-left: 6px;
+            font-size: 30px;
+            width: 85%;
+            border: 0px;
+            outline: none;
+            margin: 0px;
+        }
+        
+        button {
+            width: 10%;
+            height: 100%;
+            border: 0px;
+            background: rgb(104, 6, 87);
+            outline: none;
+            float: center;
+            color: white;
+            /* margin-right: 2px; */
+        }
+        
+        .button-search {
+            width: 10%;
+            height: 100%;
+            border: 0px;
+            background: rgb(104, 6, 87);
+            outline: none;
+            float: right;
+            color: white;
+            /* margin-right: 2px; */
+        }
+        
+        input::placeholder {
+            color:rgba(78, 78, 78, 0.50);
+            /* font-style: italic; */
+          }
+        
+        /*로그인, 회원가입*/
+        .p-base {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        
+        
+        /*네브바*/
+        
+        body {
+            margin: 0;
+        }
+        
+    
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            /* width: 100%; */
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+            list-style-type: none;
+        }
+        
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+        
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+        
+        /* .nav-item:nth-child(7) {
+            background-color: orangered;
+        }
+        
+        .nav-item:hover {
+            background-color: orangered;
+        }
+         */
+        
+        /*select box*/
+    
+
+
+    #menuToggle
+    {
+      display: block;
+      position: relative;
+      top: -150px;
+      left: 25px;
+      width: 0;
+      height: 0;
+      
+      z-index: 1;
+      
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    
+    #menuToggle a
+    {
+      text-decoration: none;
+      color: #232323;
+      
+      transition: color 0.3s ease;
+    }
+    
+    #menuToggle a:hover
+    {
+      color: tomato;
+    }
+    
+    
+    #menuToggle input
+    {
+      display: block;
+      width: 40px;
+      height: 32px;
+      position: absolute;
+      top: -7px;
+      left: -5px;
+      
+      cursor: pointer;
+      
+      opacity: 0; /* hide this */
+      z-index: 2; /* and place it over the hamburger */
+      
+      -webkit-touch-callout: none;
+    }
+    
+    /*
+     * Just a quick hamburger
+     */
+    #menuToggle span
+    {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+      
+      background: #cdcdcd;
+      border-radius: 3px;
+      
+      z-index: 1;
+      
+      transform-origin: 4px 0px;
+      
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                  opacity 0.55s ease;
+    }
+    
+    #menuToggle span:first-child
+    {
+      transform-origin: 0% 0%;
+    }
+    
+    #menuToggle span:nth-last-child(2)
+    {
+      transform-origin: 0% 100%;
+    }
+    
+    /* 
+     * Transform all the slices of hamburger
+     * into a crossmark.
+     */
+    #menuToggle input:checked ~ span
+    {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background: #232323;
+    }
+    
+    /*
+     * But let's hide the middle one.
+     */
+    #menuToggle input:checked ~ span:nth-last-child(3)
+    {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    
+    /*
+     * Ohyeah and the last one should go the other direction
+     */
+    #menuToggle input:checked ~ span:nth-last-child(2)
+    {
+      transform: rotate(-45deg) translate(0, -1px);
+    }
+    
+    /*
+     * Make this absolute positioned
+     * at the top left of the screen
+     */
+    #menu
+    {
+      position: absolute;
+      width: 500px;
+      margin: -100px 0 0 -50px;
+      padding: 50px;
+      padding-top: 125px;
+      
+      background: #ededed;
+      list-style-type: none;
+      -webkit-font-smoothing: antialiased;
+      /* to stop flickering of text in safari */
+      
+      transform-origin: 0% 0%;
+      transform: translate(-100%, 0);
+      
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+    
+    #menu li
+    {
+      padding: 10px 0;
+      font-size: 22px;
+    }
+    
+    /*
+     * And let's slide it in from the left
+     */
+    #menuToggle input:checked ~ ul
+    {
+      transform: none;
+    }
+
+}
+@media screen and (max-width: 1107px) and (min-width:511px){
+
+    input[type="checkbox"]{
+        opacity: 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        z-index: -1;
+        display: none;
+        /* visibility: hidden; */
+
+    }
+    
+    .header-base {
+        margin: 0vh;
+        padding: 0vh;
+        }
+        
+        
+        /*로고*/
+        
+        .img-base{
+            height: 5%;
+            width: 100%;
+        }
+        
+        .img-in {
+            /* width: 100%; */
+            /* height: 20px; */
+            /* width: 230px; */
+            /* float: right; */
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 00px;
+            /* margin-left: 5vh; */
+            margin-bottom: 20px;
+            
+            /* margin-left: 5vh; */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center; 
+            /* overflow: ; */
+            display: inline-block;
+            /* display:block; */
+            
+            /* height: 30px; */
+            /* width: auto; */
+        }
+        
+        /* 검색창 */
+        .div-base {
+            height: 50px;
+            width: 100%;
+            border: 1px solid rgb(104, 6, 87);
+            background: white;
+            /* margin-left: 20px; */
+            /* margin-left: 1vw; */
+            margin: 2px;
+            /* float: left; */
+        }
+        
+        .input-base {
+            padding-top: 6px;
+            padding-left: 6px;
+            font-size: 30px;
+            width: 85%;
+            border: 0px;
+            outline: none;
+            margin: 0px;
+        }
+        
+        button {
+            width: 10%;
+            height: 100%;
+            border: 0px;
+            background: rgb(104, 6, 87);
+            outline: none;
+            float: center;
+            color: white;
+            margin-right: 2px;
+        }
+        
+        .button-search {
+            width: 10%;
+            height: 100%;
+            border: 0px;
+            background: rgb(104, 6, 87);
+            outline: none;
+            float: right;
+            color: white;
+            margin-right: 2px;
+        }
+        
+        input::placeholder {
+            color:rgba(78, 78, 78, 0.50);
+            /* font-style: italic; */
+          }
+        
+        /*로그인, 회원가입*/
+        .p-base {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        
+        
+        /*네브바*/
+        
+        body {
+            margin: 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+            list-style-type: none;
+        }
+        
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+        
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+        
+        .nav-item:nth-child(7) {
+            background-color: orangered;
+        }
+        
+        .nav-item:hover {
+            background-color: orangered;
+        }
+        
+        /*select box*/
+        
 }
 
-/* 검색창 */
-.div-base {
-    height: 40px;
-    width: 400px;
-    border: 1px solid orangered;
-    background: white;
-    margin-left: 10px;
-    margin-top: 9vh;
-    float: left;
+
+@media screen and (min-width: 1108px) {
+
+    input[type="checkbox"]{ 
+            opacity: 0;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            z-index: -1;
+            display: none;
+       }
+    
+    .header-base {
+        margin: 0vh;
+        padding: 0vh;
+        }
+        
+        
+        /*로고*/
+        
+        .img-base{
+            height: 20px;
+            float: left;
+        }
+        
+        .img-in {
+            
+            /* height: 20px; */
+            /* width: 230px; */
+            /* float: right; */
+            margin-top: 5vh;
+            margin-left: 5vh;
+            /* margin-bottom: 3vh; */
+            /* margin-left: 5vh; */
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+            /* overflow: ; */
+            display: inline-block;
+            /* height: 30px; */
+            /* width: auto; */
+        }
+        
+        /* 검색창 */
+        .div-base {
+            height: 60px;
+            width: 700px;
+            border: 1px solid orangered;
+            background: white;
+            margin-left: 20px;
+            margin-top: 5vh;
+            margin-bottom: 3vh;
+            float: left;
+        }
+        
+        .input-base {
+            padding-top: 6px;
+            padding-left: 9px;
+            font-size: 35px;
+            width: 600px;
+            border: 0px;
+            outline: none;
+            margin: 0px;
+        }
+        
+        button {
+            width: 70px;
+            height: 100%;
+            border: 0px;
+            background: orangered;
+            outline: none;
+            float: center;
+            color: white;
+        }
+        
+        .button-search {
+            width: 70px;
+            height: 100%;
+            border: 0px;
+            background: orangered;
+            outline: none;
+            float: right;
+            color: white;
+        }
+        
+        input::placeholder {
+            color:rgba(78, 78, 78, 0.50);
+            /* font-style: italic; */
+          }
+        
+        /*로그인, 회원가입*/
+        .p-base {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        
+        
+        /*네브바*/
+        
+        body {
+            margin: 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+            list-style-type: none;
+            
+        }
+        
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+        
+        .nav-item a {
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+        
+        .nav-item:nth-child(7) {
+            background-color: orangered;
+        }
+        
+        .nav-item:hover {
+            background-color: orangered;
+        }
+        
+        /*select box*/
+        
 }
 
-.input-base {
-    font-size: 25px;
-    width: 325px;
-    border: 0px;
-    outline: none;
-    margin: 0px;
-}
-
-button {
-    width: 50px;
-    height: 100%;
-    border: 0px;
-    background: orangered;
-    outline: none;
-    float: center;
-    color: white;
-}
-
-.button-search {
-    width: 50px;
-    height: 100%;
-    border: 0px;
-    background: orangered;
-    outline: none;
-    float: right;
-    color: white;
-}
-
-/*로그인, 회원가입*/
-.p-base {
-    float: right;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-/*로고*/
-
-.img-base {
-    margin-bottom: 3vh;
-    margin-top: 5vh;
-    margin-left: 5vh;
-    height: 60px;
-    width: 230px;
-    float: left;
-}
-
-/*네브바*/
-
-body {
-    margin: 0;
-}
-
-.nav-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: whitesmoke;
-    list-style-type: none;
-}
-
-.nav-item {
-    padding: 15px;
-    cursor: pointer;
-}
-
-.nav-item a {
-    text-align: center;
-    text-decoration: none;
-    color: black;
-}
-
-.nav-item:nth-child(7) {
-    background-color: orangered;
-}
-
-.nav-item:hover {
-    background-color: orangered;
-}
-
-/*select box*/

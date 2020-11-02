@@ -32,7 +32,10 @@
         <a href="{% url 'user:login' %}"><p class="p-base"><b>로그인</b></p></a>  
         <a href="{% url 'user:signup' %}"><p class="p-base"><b>회원가입</b></p></a>
         {% endif %}
-        <a href="{% url 'skin:skin' %}"><img class="img-base" src="https://static.lotteon.com/p/common/foCommon/assets/img/logo_lohbs@2x.png" alt="LOGOFILE"></a>
+        <div class="img-base">
+            <a class="img-in" href="{% url 'skin:skin' %}"><img src="https://static.lotteon.com/p/common/foCommon/assets/img/logo_lohbs@2x.png" alt="LOGOFILE"></a>
+        </div>
+        
         <div class="div-base">
             <input class="input-base" type="text" placeholder="LOHBs만의 맞춤서비스">
             <button class="button-search">Go</button>
@@ -40,7 +43,25 @@
 
     </header>
     
-    <nav>
+    <nav role="navigation">
+        <div id="menuToggle">
+            
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul class="nav-container" id="menu">
+                <li class="nav-item"><a href="{% url 'skin:skin' %}"><b>홈</b></a></li>
+                <li class="nav-item"><a href=""><b>랭킹</b></a></li>
+                <li class="nav-item"><a href=""><b>MD추천</b></a></li>
+                <li class="nav-item"><a href=""><b>롭스딜</b></a></li>
+                <li class="nav-item"><a href=""><b>이벤트</b></a></li>
+                <li class="nav-item"><a href=""><b>기획전</b></a></li>
+                <li class="nav-item"><a href="{% url 'skin:select' %}"><b>SKIN GUIDE</b></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <nav>
         <ul class="nav-container">
             <li class="nav-item"><a href="{% url 'skin:skin' %}"><b>홈</b></a></li>
             <li class="nav-item"><a href=""><b>랭킹</b></a></li>
@@ -50,7 +71,7 @@
             <li class="nav-item"><a href=""><b>기획전</b></a></li>
             <li class="nav-item"><a href="{% url 'skin:select' %}"><b>SKIN GUIDE</b></a></li>
         </ul>
-    </nav>
+    </nav> -->
 
     {% block content %}{% endblock %}
 </body>

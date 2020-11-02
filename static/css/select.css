@@ -3,7 +3,10 @@
 }
 
 .stepsBox {
+    /* max-width: 100%; */
+    /* margin: 300px; */
     padding-bottom: 60px;
+    float: none; margin: 0 auto;
 }
 
 .claimSteps {
@@ -32,6 +35,12 @@
 
 .claimStepText {
     text-align: center;
-    margin-left: 33.3%;
-    width: 33.3%;
+    /* margin-left: 33.3%;
+    width: 33.3%; */
+}
+
+.divpad {
+    width: 100%;
+    height: 100%;
+    /* position:absolute; top:0; left:0; top:0; right:0; margin: auto; */
 }

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-select page
+Skin Guide
 {% endblock %}
 {% load static %}
 {% block content %}
@@ -18,11 +18,11 @@ select page
 
 <body>
     
-    <section style="padding: 15%;">
-
+    <section class="divpad center-block ">
+    <div class="container center-block vertical-center" style="width:100%; margin-top: 20px;">
     
-    <div id="stepsContainer">
-        <a href="{% url 'skin:skintypetest' %}"><div class="col-md-6 col-xs-12 stepsBox">
+    <div class="row center-block">
+        <a href="{% url 'skin:skintypetest' %}"><div class="col-sm-6 col-xs-12 col-lg-3 stepsBox ">
             <div class="claimSteps" id="stepOne">
                 <p class="claimStepNumber">1</p>
                 <p class="claimStepTitle">피부성향 테스트하기</p>
@@ -31,7 +31,7 @@ select page
         </div>
         </a>
         <a href="{% url 'skin:skincheck' %}">
-            <div class="col-md-6 col-xs-12 stepsBox">
+            <div class="col-sm-6 col-xs-12 col-lg-3 stepsBox">
                 <div class="claimSteps" id="stepTwo">
                     <p class="claimStepNumber">2</p>
                     <p class="claimStepTitle">피부성향 등록하기</p>
@@ -41,7 +41,7 @@ select page
         </a>
 
         <a href="{% url 'skin:userproduct' %}">
-            <div class="col-md-6 col-xs-12 stepsBox">
+            <div class="col-sm-6 col-xs-12 col-lg-3 stepsBox">
                 <div class="claimSteps" id="stepThree">
                     <p class="claimStepNumber">3</p>
                     <p class="claimStepTitle">사용제품 등록하기</p>
@@ -51,7 +51,7 @@ select page
         </a>
 
         <a href="{% url 'skin:recommend' %}">
-            <div class="col-md-6 col-xs-12 stepsBox">
+            <div class="col-sm-6 col-xs-12 col-lg-3 stepsBox">
                 <div class="claimSteps" id="stepFour">
                     <p class="claimStepNumber">4</p>
                     <p class="claimStepTitle">제품 추천</p>
@@ -60,6 +60,7 @@ select page
             </div>
         </a>
     </div>
+</div>
     </section>
 </body>
 
