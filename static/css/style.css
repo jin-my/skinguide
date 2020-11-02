@@ -58,7 +58,7 @@ a{
         .div-base {
             height: 50px;
             width: 100%;
-            border: 1px solid rgb(104, 6, 87);
+            border: 1px solid orangered;
             background: white;
             /* margin-left: 20px; */
             /* margin-left: 1vw; */
@@ -83,7 +83,7 @@ a{
             width: 10%;
             height: 100%;
             border: 0px;
-            background: rgb(104, 6, 87);
+            background:orangered;
             outline: none;
             float: center;
             color: white;
@@ -94,7 +94,7 @@ a{
             width: 10%;
             height: 100%;
             border: 0px;
-            background: rgb(104, 6, 87);
+            background:orangered;
             outline: none;
             float: right;
             color: white;
@@ -270,7 +270,7 @@ a{
     #menu
     {
       position: absolute;
-      width: 500px;
+      width: 400px;
       margin: -100px 0 0 -50px;
       padding: 50px;
       padding-top: 125px;
@@ -357,7 +357,7 @@ a{
         .div-base {
             height: 50px;
             width: 100%;
-            border: 1px solid rgb(104, 6, 87);
+            border: 1px solid orangered;
             background: white;
             /* margin-left: 20px; */
             /* margin-left: 1vw; */
@@ -379,7 +379,7 @@ a{
             width: 10%;
             height: 100%;
             border: 0px;
-            background: rgb(104, 6, 87);
+            background: orangered;
             outline: none;
             float: center;
             color: white;
@@ -390,7 +390,7 @@ a{
             width: 10%;
             height: 100%;
             border: 0px;
-            background: rgb(104, 6, 87);
+            background:orangered;
             outline: none;
             float: right;
             color: white;
